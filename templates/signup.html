@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		    
+		<title>Register new user - Chatter box</title>
+		    
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+        <link
+			href="../static/css/MainDesign.css" rel="stylesheet"
+		/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+	<body>
+        <div class="TopBanner">
+            <span class="fs-4"><h1>ChAtter BoX</h1></span>
+        </div>
+
+        <div class="PageBody">
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+            
+            <table style="width: 100%;"> <tr>
+                <td style="width: 75%;">
+            <form action="/register/" method="post">
+              <table>
+                <tr><td></td><td><h4><b>New User Sign Up</h4>(All fields are mandatory)</b></td>
+                <td></td><td style="color: red;">{% autoescape false %} {{regstatus}} {% endautoescape %}</td>
+                </tr>
+                <tr>
+                  <td align="right"><label for="fname">First Name&nbsp;</label></td>
+                  <td><input class="inputfield" type="text" placeholder="Enter First name" name="fname" id="fname" size="40" value="{{rfname}}" required></td>
+                  <td><label for="lname">Last Name&nbsp;</label></td>
+                  <td><input class="inputfield" type="text" placeholder="Enter Last name" name="lname" id="lname" size="40" value="{{rlname}}" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="email">Email&nbsp;</label></td>
+                    <td><input class="inputfield" type="text" placeholder="Enter email address" name="email" id="email" size="40" value="{{remail}}" required></td>
+                    </tr>
+                    <tr>
+                    <td align="right"><label for="ccode">Country Code  +</label></td>
+                    <td><input class="inputfield" type="text" placeholder="00" name="ccode" id="ccode" size="2" maxlength="2" value="{{rccode}}" required>
+                    <label for="acode"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Area Code&nbsp;</label>
+                    <input class="inputfield" type="text" placeholder="000" name="acode" id="acode" size="3" maxlength="3" value="{{racode}}" required></td>
+                    <td><label for="phone">Phone No.&nbsp;</label></td>
+                    <td><input class="inputfield" type="text" placeholder="Phone No" name="phone" id="phone" size="8" maxlength="8" value="{{rphone}}" required></td>
+                </tr>
+                <tr>
+                <td align="right"><label for="uid">Your user id&nbsp;</label></td>
+                <td><input class="inputfield" type="text" placeholder="Preferably alpha numeric characters" name="uid" id="uid" size="40" value="{{ruid}}" required></td>
+                </tr>
+                <tr>
+                <td align="right"><label for="pass">Your password&nbsp;</label></td>
+                <td><input class="inputfield" type="password" placeholder="minimum 8 characters" name="pass" id="pass" size="40" minlength="8" value="{{rpsw}}" required></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td align="right"><label for="conpass">Retype password&nbsp;</label></td>
+                <td><input class="inputfield" type="password" placeholder="Retype password" name="conpass" id="conpass" size="40" minlength="8" value="{{rconpass}}" required></td>
+                </tr>
+                <tr>
+                <td></td>
+                <td> <button class="BtnReg" type="submit">Sign Up</button> </td>
+                </tr>
+                </table>    
+            </form>
+            </td>
+            <td style="width: 25%; background-color: #CEE6C0; border: 2px; text-align: center;">
+                <h3>A<br>D<br>S<br><br>H<br>E<br>R<br>E</h3>
+            </td>
+            </tr></table>
+
+        </div>
+    </body>
+</html>
